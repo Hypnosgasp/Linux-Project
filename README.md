@@ -1,53 +1,59 @@
-Neste projeto iremos criar um script onde toda a infraestrutura de usuários, grupos de usuários, diretórios e permissões serão criadas automaticamente. 
-Será realizado o upload do arquivo de script no GitHub para futuras reutilizações do script. 
-Sendo assim, toda nova máquina virtual que for iniciada já estará pronta para uso quando o script for executado.
+# 🐧 Projeto 1 — Fundamentos de Linux
 
+## 📌 Sobre o Projeto
 
+Este repositório contém práticas e exercícios realizados no ambiente Linux com foco no aprendizado da linha de comando e administração básica do sistema.
 
+O objetivo é desenvolver familiaridade com comandos essenciais, manipulação de arquivos, gerenciamento de usuários e organização de diretórios.
 
+Projeto voltado para estudo e prática em ambiente de laboratório.
 
-#!/bin/bash
+---
 
-echo "Iniciando a configuração da infraestrutura..."
+## 🛠 Tecnologias Utilizadas
 
-# Criando os diretórios
-echo "Criando diretórios..."
-mkdir /publico
-mkdir /adm
-mkdir /ven
-mkdir /sec
+- 🐧 Linux
+- 💻 Terminal / Bash
+- 📂 Manipulação de arquivos e diretórios
+- 👤 Gerenciamento de usuários e permissões
 
-# Criando os grupos
-echo "Criando grupos..."
-groupadd GRP_ADM
-groupadd GRP_VEN
-groupadd GRP_SEC
+---
 
-# Criando os usuários
-echo "Criando usuários..."
+## 📚 Conteúdos Praticados
 
-useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM
-useradd maria -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM
-useradd joao  -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM
+- Navegação entre diretórios (`cd`, `ls`, `pwd`)
+- Criação e remoção de arquivos e pastas (`mkdir`, `rm`, `touch`)
+- Gerenciamento de usuários
+- Permissões de arquivos (`chmod`, `chown`)
+- Instalação de pacotes
+- Uso de comandos administrativos com `sudo`
 
-useradd debora -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_VEN
-useradd sebastiana -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_VEN
-useradd roberto -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_VEN
+---
 
-useradd josefina -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_SEC
-useradd amanda -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_SEC
-useradd rogerio -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_SEC
+## 🚀 Como Executar os Scripts
 
-# Definindo permissões dos diretórios
-echo "Definindo permissões..."
+Caso existam scripts `.sh` no projeto:
 
-chown root:GRP_ADM /adm
-chown root:GRP_VEN /ven
-chown root:GRP_SEC /sec
+1️⃣ Dar permissão de execução:
 
-chmod 770 /adm
-chmod 770 /ven
-chmod 770 /sec
-chmod 777 /publico
+```bash
+chmod +x nome_do_script.sh
+```
 
-echo "Configuração concluída com sucesso."
+2️⃣ Executar
+```bash
+./nome_do_script.sh
+```
+
+## 🎯 Objetivo de Aprendizado
+Este projeto foi desenvolvido para:
+- Praticar comandos essenciais do Linux
+- Entender permissões e controle de acesso
+- Desenvolver autonomia no terminal
+- Criar base para estudos em DevOps e Cybersecurity
+
+## 🔮 Melhorias Futuras
+- Criar scripts automatizados de configuração
+- Adicionar exemplos de gerenciamento de serviços
+- Incluir configuração de servidor
+- Criar laboratório documentado passo a passo
